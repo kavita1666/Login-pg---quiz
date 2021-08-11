@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #03a9f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body.active{
+    background-color: #f43648
+    ;
+}
+
+.container{
+    width: 800px;
+    height: 500px;
+    position: relative;
+}
+.container .blueBg{
+    position: absolute;
+    width: 100%;
+    height: 420px;
+    top: 40px;
+    background-color: rgba(255,255,255,0.2);
+    box-shadow: 0 5px 45px rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.blueBg .box{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.blueBg .box h2{
+    color: white;
+    font-weight: 500;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+.blueBg .box button{
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+.box button:hover{
+    transform: scale(0.95);
+}
+.formbx{
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 5px 45px rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.5s all ease-in-out;
+    overflow: hidden;
+}
+
+.formbx.active {
+    left: 50%;
+}
+.formbx .form{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 50px;
+    transition: 0.5s all ease-in-out;
+}
+.formbx .signin-form{
+    transition-delay: 0.25s;
+}
+.formbx.active .signin-form{
+    left: -100%;
+    transition-delay: 0s;
+}
+.formbx .signup-form{
+    left: 100%;
+}
+.formbx.active .signup-form{
+    left: 0;
+    transition-delay: 0.25s;
+}
+
+.formbx form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s all ease-in-out;
+}
+.formbx .form h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.formbx .form form input{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.formbx .btn{
+    padding: 10px 30px;
+    font-size: 1.1em;
+    border-radius: 50px;
+    border: none;
+    margin: 20px;
+    background-color: #03a9f4;
+    color: white;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+.formbx.active .signup-form .btn{
+    background-color: #f43648;
+}
+.formbx .form form a{
+    text-decoration: none;
+}
+
+
+/* responsive */
+@media (max-width:991px)
+{
+    .container{
+        max-width: 400px;
+        height: 650px;
+    }
+    .container .blueBg{
+        top: 0;
+        height: 100%;
+    }
+    .formbx{
+        width: 100%;
+        height: 500px;
+        top: 0;
+        box-shadow: none;
+    }
+    .blueBg .box{
+        position: absolute;
+        width: 100%;
+        height: 150px;
+        bottom: 0;
+    }
+    .blueBg .sign-in{
+        top: 0;
+    }
+    .formbx.active{
+        left: 0;
+        top: 150px;
+    }
+}
